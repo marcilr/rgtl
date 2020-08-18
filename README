@@ -7,6 +7,7 @@ Mon 17 Aug 2020 04:21:17 PM AKDT
 ================================
 Created initial Ray's Guide to LaTeX document.
 
+
 Mon 03 Aug 2020 12:59:08 PM AKDT
 ================================
 Create outline.txt with:
@@ -74,7 +75,7 @@ Filelist
 
 BUILD
   Build number of document.
-  Started at 0 on Thu 06 Aug 2020 
+  Started at 0 on Mon 17 Aug 2020 
 
 build.xml
   Ant build.xml to compile LaTeX file crafted by Jason Kattell at
