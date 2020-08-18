@@ -1,0 +1,121 @@
+%% -*- Mode: LaTeX -*-
+%%
+%% abbreviations.txt
+%% Created Fri May 31 10:46:19 AKDT 2019
+%% Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+%%
+
+%%
+%% Use of hyperref \href:
+%%   \href{URL}{DESCRIPTION} 
+%%
+
+%% =============== List of Abbreviations ===============
+%% =============== List of Abbreviations ===============
+\newpage
+\setcounter{secnumdepth}{0}
+\section{List of Definitions and Abbreviations}
+
+\noindent\begin{itemize*}
+
+%%
+%% ===================== CONTAINER DATABASE ===================
+%% ===================== CONTAINER DATABASE ===================
+%%
+\item{\begin{bf}Container database\end{bf}} - ``Container Database (CDB) : On 
+the surface this seems very similar to a conventional Oracle database, as it 
+contains most of the working parts you will be already familiar with 
+(controlfiles, datafiles, undo, tempfiles, redo logs etc.). It also houses 
+the data dictionary for those objects that are owned by the root container 
+and those that are visible to all PDBs.''\footnote{Multitenant : Overview of Container Databases (CDB) and Pluggable Databases (PDB)\\
+\href{https://oracle-base.com/articles/12c/multitenant-overview-container-database-cdb-12cr1\#create-pdb}{https://oracle-base.com/articles/12c/multitenant-overview-container-database-cdb-12cr1\#create-pdb}}
+
+
+
+%%
+%% ========================== DATABASE ========================
+%% ========================== DATABASE ========================
+%%
+\item{\begin{bf}Database\end{bf}} - ``A database is a set of physical
+  files on disk created by the CREATE DATABASE statement. The instance
+  manages its associated data and serves the users of the database.''\footnote{Introduction to the Oracle Database Instance, Oracle Database Instance, Database Concepts, Oracle Database,
+    Release 12.2,
+    \href{https://docs.oracle.com/en/database/oracle/oracle-database/12.2/cncpt/oracle-database-instance.html}{https://docs.oracle.com/en/database/oracle/oracle-database/12.2/cncpt/}\newline
+  \href{http://www.google.com}{oracle-database-instance.html}}
+
+%%
+%% ============================ DBCA ==========================
+%% ============================ DBCA ==========================
+%%
+\item{\begin{bf}DBCA\end{bf}} - Database Configuration Assistant.  The DBCA can be used to:\footnote{\href{https://docs.oracle.com/cd/B16254_01/doc/server.102/b14196/install003.htm}{Using DBCA to Create and Configure a Database, Oracle\textregistered \hspace{1pt} Database 2 Day DBA, }}
+\begin{itemize*}
+  \item Creating a Database with DBCA
+  \item Configuring Database Options with DBCA
+  \item Deleting a Database with DBCA
+  \item Managing Templates with DBCA
+  \item Configuring Automatic Storage Management with DBCA
+\end{itemize*}
+
+
+%%
+%% ========================== INSTANCE ========================
+%% ========================== INSTANCE ========================
+%%
+\item{\begin{bf}Instance\end{bf}} - ``A database instance
+  is a set of memory structures that manage database files.''\footnote{Ibid.}
+  
+
+%%
+%% ========================= MULTITENANT ======================
+%% ========================= MULTITENANT ======================
+%%
+\item{\begin{bf}Multitenant\end{bf}} - ``The multitenant option
+  introduced in Oracle Database 12c allows a single container
+  database (CDB) to host multiple separate pluggable databases
+  (PDB).''\footnote{Multitenant : Create and Configure a Pluggable Database (PDB) in Oracle Database 12c Release 1 (12.1)\\
+\href{https://oracle-base.com/articles/12c/multitenant-create-and-configure-pluggable-database-12cr1}{https://oracle-base.com/articles/12c/multitenant-create-and-configure-pluggable-database-12cr1}}
+
+%%
+%% =============== ORACLE UNIVERSAL INSTALLER (OUI) ===========
+%% =============== ORACLE UNIVERSAL INSTALLER (OUI) =========== 
+%%
+\item{\begin{bf}Oracle Universal Installer (OUI)\end{bf}} - 'The Oracle
+  Universal Installer (OUI) allows you to create a container database (CDB)
+  during the software installation. The "Typical Install Configuration"
+  screen has a checkbox to indicate the database is a container database.
+  You can optionally create a single pluggable database (PDB) in this
+  screen also.'\footnote{Oracle Universal Installer (OUI)\\
+    \href{https://oracle-base.com/articles/12c/multitenant-create-and-configure-container-database-12cr1\#oui}{https://oracle-base.com/articles/12c/multitenant-create-and-configure-container-database-12cr1\#oui}}
+
+%%
+%% ===================== PLUGGABLE DATABASE ===================
+%% ===================== PLUGGABLE DATABASE ===================
+%%
+\item{\begin{bf}Pluggable database\end{bf}} - ``Pluggable Database (PDB) : Since 
+the CDB contains most of the working parts for the database, the PDB only n
+eeds to contain information specific to itself. It does not need to worry about 
+controlfiles, redo logs and undo etc. Instead it is just made up of datafiles 
+and tempfiles to handle it's own objects. This includes it's own data dictionary, 
+containing information about only those objects that are specific to the PDB. 
+From Oracle 12.2 onward a PDB can, and should, have a local undo tablespace.''\footnote{Multitenant : Overview of Container Databases (CDB) and Pluggable Databases (PDB)\\
+\href{https://oracle-base.com/articles/12c/multitenant-overview-container-database-cdb-12cr1\#create-pdb}{https://oracle-base.com/articles/12c/multitenant-overview-container-database-cdb-12cr1\#create-pdb}}
+
+
+
+
+\end{itemize*}
+
+
+%%\footnote{What is AWStats, \href{https://awstats.sourceforge.io/\#WHAT}{https://awstats.sourceforge.io/\#WHAT}}}
+%%
+%%However if you use AWStats as a CGI you can click on the ``year'' link to
+%%have a report for all the year. In such a report, period is a full year,
+%%so Unique Visitors are number of hosts that have made at least 1 hit on
+%%1 page of your web site during the year.
+
+
+%%
+%% Need to complete with items from:
+%% AWStats Glossary
+%% https://awstats.sourceforge.io/docs/awstats_glossary.html
+%%
