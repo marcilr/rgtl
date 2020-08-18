@@ -1,0 +1,14 @@
+#.gitignore
+# Created Mon 17 Aug 2020 04:48:23 PM AKDT
+# by Raymond E. Marcil <marcilr@gmail.com>
+#
+# Files for git to ignore
+#
+.gitignore
+rgtl.aux
+rgtl.log
+rgtl.out
+rgtl.tmp
+rgtl.toc
+
+
