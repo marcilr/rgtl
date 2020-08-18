@@ -69,6 +69,9 @@ mintaka.sdsu.edu/
 
 Filelist
 ========
+.gitignore
+  Files for git to ignore
+
 00SECTIONS/
   LaTeX document sections.  Thinks this is the best way to
   create a flexible modular document.
