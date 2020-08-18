@@ -98,7 +98,6 @@ examples.tex
   Copied from malachite's:
     ~/svn-ORIG-20151006/docs/latex/latex-examples-OLD/trunk/src/tex/latex-examples.tex
 
-
 links.txt
   Ray's Guide to LaTeX related links
 
@@ -108,17 +107,16 @@ make.bat
 Makefile
   Standard GNU makefile to build LaTeX document
 
-rglt.txt
+rgtl.txt
   Items for Ray's Guide to LaTeX
   LaTex documentation
 
-rglt.pdf
+rgtl.pdf
   Items for Ray's Guide to LaTeX
   Built from LaTeX.
 
-rglt.tex
+rgtl.tex
   Ray's Guide to LaTex
-
 
 outline.txt
   Outline
