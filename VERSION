@@ -1,0 +1,24 @@
+#!/bin/sh
+# VERSION
+# Created Mon 17 Aug 2020 04:21:17 PM AKDT
+# Copyright (C) 2020 by Raymond E. Marcil <raymond.marcil@alaska.gov>
+#
+# Ray's Guide to LaTeX document version
+#
+# To use from cli:
+#   $ . ./VERSION
+#
+# Or from Makefile:
+#   include VERSION
+#
+# Links
+# =====
+# How to source a script in a Makefile?
+# https://stackoverflow.com/questions/7507810/how-to-source-a-script-in-a-makefile
+#
+
+#
+# Mon 17 Aug 2020 04:21:17 PM AKDT
+# o Latest 0.0.1 version (first versioned version
+#
+0.0.1
