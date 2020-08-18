@@ -1,0 +1,321 @@
+%% -*- Mode: LaTeX -*-
+%%
+%% oracle.tex
+%% Created Mon 13 Jul 2020 01:33:36 PM AKDT
+%% by Raymond E. Marcil <raymond.marcil@alaska.gov>
+%% 
+%% Oracle Installation and Usage
+%%
+
+  %%
+%%%%%% Preamble.
+  %%
+
+%% Specify DVIPS driver used by things like hyperref
+\documentclass[12pt,letterpaper,dvips]{article}
+
+%% rcs is the package to display cvs revision info.
+%%\usepackage{rcs}
+\usepackage{fullpage}
+\usepackage{fancyvrb} 
+\usepackage{graphicx}
+\usepackage{figsize}
+\usepackage{calc}
+\usepackage{textcomp}
+
+%%
+%% enumitem – Control layout of itemize, enumerate, description
+%% https://www.ctan.org/pkg/enumitem
+%%
+%% Allows for use of \bgein{itemize}[leftmargin=0pt] 
+%% to lists with 0 left margin.
+%%
+%% Itemize left margin
+%% http://tex.stackexchange.com/questions/170525/itemize-left-margin
+%% 
+\usepackage{enumitem}%     http://ctan.org/pkg/enumitem
+
+
+%% caption package for use in justifying table or figure captions
+\usepackage{caption}
+
+\usepackage{lipsum}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage[first,bottomafter]{draftcopy}
+\usepackage[numbib]{tocbibind}
+
+\usepackage{amssymb}              %% AMS Symbols, used for \checkmark
+\usepackage{multicol}
+
+%%
+%% Extract SVN metadata for use elsewhere.
+%% This information has:
+%% o the filename
+%% o the revision number
+%% o the date and time of the last Subversion co command
+%% o name of the user who has done the action
+%%
+%%\usepackage{svninfo}
+%%\svnInfo $Id: template.tex 52 2013-02-04 22:32:54Z marcilr $
+
+%%
+%% Hyperref package for embedding URLs for clickable links in PDFs, 
+%% also specify PDF attributes here.
+%%
+%% The pdfborder={0 0 0} is what ellimated the blue box around the url
+%% displayed by \href{}{}.
+%%
+%% The command pdfborder={0 0 1} would display a box with thickness of 1 pt.
+%%
+%% Hypertext marks in LATEX: a manual for hyperref
+%% by Sebastian Rahtz and Heiko Oberdiek - November 2012
+%% http://ctan.org/pkg/hyperref 
+%% http://mirror.hmc.edu/ctan/macros/latex/contrib/hyperref/doc/manual.html
+%%
+\usepackage[
+colorlinks,
+linkcolor=blue,
+%%colorlinks=false,
+hyperindex=false,
+urlcolor=blue,
+pdfborder={0 0 0},
+pdfauthor={Raymond E. Marcil},
+pdftitle={Oracle Installation and Usage},
+pdfcreator={ps2pdf},
+pdfsubject={Oracle, installation, configuration, usage},
+pdfkeywords={Oracle, installation, configuration, usage}
+]{hyperref}
+
+
+%%
+%% Extract RCS metadata for use elsewhere.
+%% Jason figured this out, very cool.
+%%
+%%\RCS $Revision: 1.53 $
+%%\RCS $Date: 2006/06/26 21:04:55 $
+
+
+  %%
+%%%%%% Customization.
+  %%
+
+% On letter paper with 10pt font the Verbatim environment has 65 columns.
+% With 12pt font the environment has 62 columns.  Exceeding this will exceed
+% the frame and will look ugly.  YHBW.  HAND.
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\renewenvironment{description}
+                 {\list{}{\labelwidth 0pt \iteminden-\leftmargin
+                          \let\labelsep\hsize
+                          \let\makelabel\descriptionlabel}}
+                 {\endlist}
+\renewcommand*\descriptionlabel[1]{\hspace\labelsep\sffamily\bfseries #1}
+
+
+  %%
+%%%%%% Commands.
+  %%
+
+\newcommand{\FIXME}[1]{\textsf{[FIXME: #1]}}
+\newcommand{\cmd}[1]{\texttt{#1}}
+
+
+%% Squeeze space above/below captions
+\setlength{\abovecaptionskip}{4pt}   % 0.5cm as an example
+\setlength{\belowcaptionskip}{4pt}   % 0.5cm as an example
+
+
+%% Tex really adds a lot of whitespace to itemized 
+%% lists so define a new command itemize* with a 
+%% lot less whitespace.  Found this in the British
+%% Tex faq.
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}}%
+  {\end{itemize}}
+
+  
+%%
+%% Tex really adds a lot of whitespace to itemized 
+%% lists so define a new command itemize* with a 
+%% lot less whitespace.  Found this in the British
+%% Tex faq.
+%%
+%% Tue Jun 23 13:22:04 AKDT 2015
+%% =============================
+%% Added [leftmargin=0.0mm] to set the left margin=0
+%% This requires use of the enumitem package:
+%%   \usepackage{enumitem}%     http://ctan.org/pkg/enumitem
+%%
+%% Itemize left margin
+%% http://tex.stackexchange.com/questions/170525/itemize-left-margin
+%%
+\newenvironment{itemizenoleft*}%
+  {\begin{itemize}[leftmargin=15.0pt]%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}}%
+  {\end{itemize}}
+  
+
+%%
+%% Tex really adds a lot of whitespace to itemized 
+%% lists so define a new command enumerate* with a 
+%% lot less whitespace.  Created using itemize*
+%% pattern.  
+%%
+  \newenvironment{enumerate*}%
+  {\begin{enumerate}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}}%
+  {\end{enumerate}}
+
+
+%%
+%% Tex really adds a lot of whitespace to itemized 
+%% lists so define a new command enumerate* with a 
+%% lot less whitespace.  Created using itemize*
+%% pattern.  
+%%
+%% Tue Jun 23 13:22:04 AKDT 2015
+%% =============================
+%% Added [leftmargin=0.0mm] to set the left margin=0
+%% This requires use of the enumitem package:
+%%   \usepackage{enumitem}%     http://ctan.org/pkg/enumitem
+%%
+%% Itemize left margin
+%% http://tex.stackexchange.com/questions/170525/itemize-left-margin
+%%
+\newenvironment{enumeratenoleft*}%
+  {\begin{enumerate}[leftmargin=0.0mm]%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}}%
+  {\end{enumerate}}
+
+
+%% Squeeze space
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+
+  %%
+%%%%%% Document.
+  %%
+
+\title{Oracle Installation and Usage}
+
+\author{Raymond E. Marcil\\
+        \texttt{$<$raymond.marcil@alaska.gov$>$}
+}
+
+% Display subversion revision and date under author on 1st page.
+%%\date{Revision \svnInfoRevision
+%%     \hspace{2pt}
+%%     (\svnInfoLongDate)}
+
+
+% Set date to RCS revision date
+%%\date{Revision \RCSRevision
+%%      \hspace{2pt}
+%%      (\RCSDate)}
+
+
+%%
+%% Display SVN (subversion) version data at top right of 1st page,
+%% This may be preferable to underneath the author.
+%%
+%%\rhead{Revision \svnInfoRevision\\
+%%\svnInfoLongDate}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{center}VERSION: THEVERSION\\
+build: THEBUILD
+\vspace{10pt}
+\end{center}
+
+
+
+%% ========================== ABSTRACT =========================
+%% ========================== ABSTRACT =========================
+%% ========================== ABSTRACT =========================
+\begin{abstract}
+  \noindent Oracle database install, users, grants, priviledges, 
+            updates and maintenance.
+\end{abstract}
+
+\vspace{2.5in}
+
+%% Draw DNR logo and address at bottom of page
+\begin{figure}[h]
+        \hspace{0.32in}
+        \SetFigLayout{1}{1}
+        \begin{minipage}[b]{0.16\figwidth}
+%%                \includegraphics[width=\textwidth]{images/dnr_bwlogo.eps}
+        \end{minipage}
+        \hspace{5pt}
+        \begin{minipage}[b]{\figwidth}
+                \bf{Alaska Department of Transportation \& Public Facilities}\\
+                \bf{Statewide Design \& Engineering Services}\\
+                820 East 15th Avenue\\
+                Anchorage, Alaska 99501
+%%                \small{\sf{820 East 15th Avenue\\
+%%                Anchorage, Alaska 99501}}
+        \end{minipage}
+\end{figure}
+
+\vspace{2.0in}
+
+\newpage
+\tableofcontents
+
+\newpage
+%%\listoffigures
+%%\listoftables
+
+
+%% ================== Main body of document =====================
+%% ================== Main body of document =====================
+%% ================== Main body of document =====================
+%%\input{00SECTIONS/titlepage.tex}
+%%\input{00SECTIONS/contents.tex}
+%%\input{00SECTIONS/figures.tex}
+%%\input{00SECTIONS/tables.tex}
+\input{00SECTIONS/abbreviations.tex}
+\input{00SECTIONS/introduction.tex}
+\input{00SECTIONS/install.tex}
+\input{00SECTIONS/credentials.tex}
+\input{00SECTIONS/instance.tex}
+\input{00SECTIONS/database.tex}
+\input{00SECTIONS/container_database.tex}
+\input{00SECTIONS/pluggable_database.tex}
+%%\input{00SECTIONS/config.tex}
+%%\input{00SECTIONS/process-logs.tex}
+%%\input{00SECTIONS/run-reports.tex}
+%%\input{00SECTIONS/scripts}
+\input{00SECTIONS/recover-n-restore.tex}
+\input{00SECTIONS/examples.tex}
+\input{00SECTIONS/comments.tex}
+%%\input{00SECTIONS/table-examples.tex}
+\input{00SECTIONS/questions.tex}
+%%\input{00SECTIONS/footnotes.tex}
+%%\input{00SECTIONS/endnotes.tex}
+\input{00SECTIONS/appendix/appendix.tex}
+
+
+\end{document}
+
+%% Local Variables:
+%% fill-column: 78
+%% mode: auto-fill
+%% compile-command: "make"
+%% End:
