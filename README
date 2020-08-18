@@ -3,6 +3,9 @@ Created Mon 17 Aug 2020 04:21:17 PM AKDT
 by Raymond E. Marcil <marcilr@gmail.com>
 
 
+Mon 17 Aug 2020 04:21:17 PM AKDT
+================================
+Created initial Ray's Guide to LaTeX document.
 
 Mon 03 Aug 2020 12:59:08 PM AKDT
 ================================
@@ -96,7 +99,7 @@ examples.tex
 
 
 links.txt
-  Oracle Documentation related links
+  Ray's Guide to LaTeX related links
 
 make.bat
   Build PDF from LaTeX source
@@ -104,20 +107,24 @@ make.bat
 Makefile
   Standard GNU makefile to build LaTeX document
 
-oracle.txt
-  Oracle database, syntax, and usage 
+rglt.txt
+  Items for Ray's Guide to LaTeX
   LaTex documentation
 
-oracle.pdf
-  Oracle database, syntax, and usage portable document format.
+rglt.pdf
+  Items for Ray's Guide to LaTeX
   Built from LaTeX.
 
-oracle.tex
-  Oracle documentation in LaTeX
+rglt.tex
+  Ray's Guide to LaTex
 
 
 outline.txt
   Outline
 
 TODO
-  Items for Oracle documentation
+  Items for Ray's Guide to LaTeX
+
+VERSION
+  Ray's Guide to LaTeX Version
+
