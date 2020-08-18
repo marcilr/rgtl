@@ -57,16 +57,13 @@ hyperlinks.tex
   Hyperlinks
 
 install.tex
-  Installation of Oracle
+  Installation of LaTeX
 
 instances.tex
-  Oracle instances
+  LaTeX instances
 
 introduction.tex
   Introduction
-
-pluggable_database.tex
-  Pluggable Database
 
 process-logs.tex
   Process Logs
